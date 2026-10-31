@@ -79,6 +79,8 @@ h3.sub { color: var(--muted); font-size: 1rem; text-transform: uppercase; letter
 .nav .brand, .nav nav a { color: #ffe9d0; }
 .nav nav a:hover { color: #fff; }
 .nav { background: #4a2a14; }
+.nav nav a.active { color: #fff; border-bottom: 3px solid var(--accent2); padding-bottom: 2px; }
+main > section[hidden] { display: none; }
 .logo { display: block; height: 64px; width: auto; image-rendering: pixelated; }
 .hero {
   width: 100vw; margin-left: calc(50% - 50vw); padding-left: 16px; padding-right: 16px;
@@ -136,6 +138,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 <header class="nav">
   <a class="brand" href="#top"><img class="logo" src="logo.png" alt="DonutButBetter"></a>
   <nav>
+    <a href="#top">Home</a>
     <a href="#join">Join</a>
     <a href="#features">Features</a>
     <a href="#ranks">Ranks</a>
@@ -384,6 +387,18 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
   for (const [id, url] of [["discord-link", SITE.discord], ["modpack-link", SITE.modpack]]) {
     if (url) { const a = document.getElementById(id); a.href = url; a.hidden = false; }
   }
+
+  const tabs = [...document.querySelectorAll("main > section")];
+  const tabLinks = [...document.querySelectorAll(".nav nav a")];
+  function showTab() {
+    const id = location.hash.slice(1);
+    const current = tabs.find(s => s.id && s.id === id) || tabs[0];
+    tabs.forEach(s => s.hidden = s !== current);
+    tabLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === (current.id ? "#" + current.id : "#top")));
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", showTab);
+  showTab();
 
   const status = document.getElementById("status");
   const statusText = document.getElementById("status-text");
