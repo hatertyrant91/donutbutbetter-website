@@ -159,6 +159,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
       <span class="ip-value" id="ip-value">loading…</span>
       <span class="ip-hint" id="ip-hint">Click to copy</span>
     </button>
+    <p class="lead" style="font-size:0.95em">Can't connect? Try the backup IP: <b>76.164.199.237</b></p>
 
     <div class="status" id="status">
       <span class="dot"></span><span id="status-text">Checking server…</span>
@@ -210,7 +211,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
       </div>
       <div class="card">
         <h3>Get the modpack (optional)</h3>
-        <p>Shows moving skins and makes the game run smoother. You don't need it to play.</p>
+        <p>Shows moving skins, adds voice chat and makes the game run smoother. You don't need it to play.</p>
         <a class="btn small-btn" href="#modpack">Modpack guide</a>
       </div>
     </div>
@@ -347,7 +348,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
         <h3>Easy way: Modrinth App</h3>
         <ol>
           <li>Install the <a href="https://modrinth.com/app" target="_blank" rel="noopener">Modrinth App</a>.</li>
-          <li>Open the DonutButBetter pack and click <b>Install</b>.</li>
+          <li>Open the DonutButBetter pack and click <b>Install</b>. It includes voice chat.</li>
           <li>Click <b>Play</b> and join the server.</li>
         </ol>
         <a class="btn small-btn" id="modpack-link" href="#" target="_blank" rel="noopener" hidden>Open the modpack</a>
@@ -358,6 +359,8 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
           <li>Install <a href="https://fabricmc.net/use" target="_blank" rel="noopener">Fabric</a> for <b>1.21.10</b>.</li>
           <li>Put the mods in <code>%APPDATA%\.minecraft\mods</code>: the Modded Skins mod and
             <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener">Fabric API</a>.</li>
+          <li>For voice chat: add <a href="https://modrinth.com/plugin/simple-voice-chat/versions?g=1.21.10&amp;l=fabric" target="_blank" rel="noopener">Simple Voice Chat</a>
+            (pick the <b>Fabric 1.21.10</b> file). It is a separate mod, not part of Modded Skins. Press <b>V</b> in game to set it up.</li>
           <li>Optional for more FPS: Sodium, Lithium, FerriteCore, EntityCulling.</li>
           <li>Pick the <b>fabric-loader-1.21.10</b> profile and play.</li>
         </ol>
@@ -377,7 +380,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 <script>
   // ---- Edit these when you have them ----
   const SITE = {
-    address: "donutbutbetter.minecraft.best",   // Java address (Bloom host)
+    address: "donutbutbetter.blockworlds.io",   // Java address (Bloom host)
     bedrockAddress: "",            // leave "" to use the same as above
     bedrockPort: "19132",
     discord: "https://discord.gg/PJrbyckAGG", // e.g. "https://discord.gg/abc123"
