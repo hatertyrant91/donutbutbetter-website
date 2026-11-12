@@ -123,6 +123,11 @@ main > section[hidden] { display: none; }
 .tag { align-self: flex-start; background: var(--accent); color: #2a1009; font-size: .72rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; }
 .notice { margin-top: 18px; padding: 14px 18px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: .9rem; }
 
+.cmds { list-style: none; padding-left: 0 !important; }
+.cmds li { margin: 8px 0 !important; color: var(--muted); }
+.cmds code { color: var(--text); font-weight: 700; }
+.cmds .alias { font-size: .85rem; }
+
 footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 600px) {
@@ -142,6 +147,8 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
     <a href="#about">About</a>
     <a href="#join">Join</a>
     <a href="#features">Features</a>
+    <a href="#commands">Commands</a>
+    <a href="#server-features">Server Features</a>
     <a href="#ranks">Ranks</a>
     <a href="#store">Store</a>
     <a href="#rules">Rules</a>
@@ -226,6 +233,129 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
       <div class="card"><h3>⚔️ PvP</h3><p>Fight for kills and climb the leaderboards. Combat logging won't save you.</p></div>
       <div class="card"><h3>🎲 Coin flips</h3><p>Bet money or shards against other players with <code>/cf</code>.</p></div>
       <div class="card"><h3>🛡️ Fair play</h3><p>A custom anticheat and active staff keep hackers and dupers out.</p></div>
+    </div>
+  </section>
+
+  <section id="commands">
+    <h2>Commands</h2>
+    <p class="small">Every command a player can use. Type <code>/help</code> in game for the same list in a menu. Other names that also work are shown in brackets.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>💰 Money &amp; trading</h3>
+        <ul class="cmds">
+          <li><code>/balance</code> <span class="alias">(/bal, /money)</span>: your money, or another player's.</li>
+          <li><code>/pay &lt;player&gt; &lt;amount&gt;</code>: send money to a player.</li>
+          <li><code>/baltop</code>: the richest players.</li>
+          <li><code>/sell</code>: open the sell menu, or sell what's in your hand.</li>
+          <li><code>/worth</code> <span class="alias">(/price)</span>: what an item sells for right now.</li>
+          <li><code>/prices</code>: items whose price dropped because too many were sold.</li>
+          <li><code>/earnings</code>: your lifetime earnings and how close you are to Commoner.</li>
+          <li><code>/ah</code> <span class="alias">(/auction)</span>: the auction house. Buy and sell with players.</li>
+          <li><code>/orders</code>: ask players to sell you items. Your money is held safely until they deliver.</li>
+          <li><code>/trade &lt;player&gt;</code>: swap items face to face, safely.</li>
+          <li><code>/shop</code>: buy items from the server shop.</li>
+          <li><code>/cf</code> <span class="alias">(/coinflip)</span>: coin flip another player for money or shards.</li>
+          <li><code>/bounty</code>: put money on a player's head, or see the bounties.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💎 Shards &amp; cosmetics</h3>
+        <ul class="cmds">
+          <li><code>/shards</code>: your shards and the shard leaderboard.</li>
+          <li><code>/shardshop</code>: spend shards on spawners, name styles and crate keys.</li>
+          <li><code>/sellspawners</code>: sell spawners back to the server for shards.</li>
+          <li><code>/crates</code>: open crates with your keys and see what's inside.</li>
+          <li><code>/nick</code>: change your name colour, font and chat colour.</li>
+          <li><code>/skins</code>: buy and wear flex skins and titles.</li>
+          <li><code>/tags</code>: pick which of your tags show in the tab list.</li>
+          <li><code>/vote</code>: vote links, your votes and vote rewards.</li>
+          <li><code>/serverauction</code> <span class="alias">(/sauction)</span>: bid on rare server cosmetics.</li>
+          <li><code>/goal</code>: chip in to the server-wide goal pot.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧭 Teleporting</h3>
+        <ul class="cmds">
+          <li><code>/rtp</code> <span class="alias">(/wild)</span>: go to a random spot in the wild.</li>
+          <li><code>/rtpqueue</code>: queue for a 1v1 fight at a random spot.</li>
+          <li><code>/spawn</code>: go to spawn.</li>
+          <li><code>/warp</code>: the warp menu.</li>
+          <li><code>/afk</code>: go to the AFK area, where standing still earns shards.</li>
+          <li><code>/sethome</code>, <code>/home</code>, <code>/delhome</code>: set, visit and delete your homes.</li>
+          <li><code>/homemarkers</code>: show nearby homes as red particles (handy before buying a base).</li>
+          <li><code>/tpa &lt;player&gt;</code>: ask to teleport to a player.</li>
+          <li><code>/tpahere &lt;player&gt;</code>: ask a player to teleport to you.</li>
+          <li><code>/tpaccept</code>, <code>/tpdeny</code>: accept or deny a teleport request.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>👥 Friends, teams &amp; chat</h3>
+        <ul class="cmds">
+          <li><code>/team</code>: make and manage a team, with a shared team home.</li>
+          <li><code>/tc</code>: talk in team chat.</li>
+          <li><code>/friend</code> <span class="alias">(/f)</span>: add, accept and remove friends.</li>
+          <li><code>/party</code> <span class="alias">(/p)</span>: make a party with friends.</li>
+          <li><code>/pc</code>: talk in party chat.</li>
+          <li><code>/msg &lt;player&gt;</code> <span class="alias">(/tell, /w, /pm)</span>: private message.</li>
+          <li><code>/reply</code> <span class="alias">(/r)</span>: reply to your last message.</li>
+          <li><code>/stats</code>: a player's money, shards, playtime, kills, deaths and more.</li>
+          <li><code>/leaderboards</code> <span class="alias">(/top)</span>: the top players on every leaderboard.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>⚙️ Settings &amp; help</h3>
+        <ul class="cmds">
+          <li><code>/help</code>: every command you can use, by category.</li>
+          <li><code>/settings</code>: turn chat, messages, requests, alerts, the scoreboard and more on or off.</li>
+          <li><code>/nv</code>: night vision on or off.</li>
+          <li><code>/song</code>: which song is playing at spawn.</li>
+          <li><code>/report &lt;player&gt;</code>: report a player to staff.</li>
+          <li><code>/bugreport</code>: report a bug. Your spot and held item are saved with it.</li>
+          <li><code>/voicerules</code>: the voice chat rules.</li>
+          <li><code>/link</code>: link your account to our Discord.</li>
+          <li><code>/modpack</code>: get the modpack link.</li>
+          <li><code>/endevent yes</code> or <code>no</code>: answer the End Event poll.</li>
+          <li><code>/kill</code>: kill yourself (if you're stuck).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>👑 Rank perks</h3>
+        <ul class="cmds">
+          <li><code>/craft</code>: a crafting table anywhere. Rich and up.</li>
+          <li><code>/ec</code> <span class="alias">(/enderchest)</span>: your ender chest anywhere. Rich and up.</li>
+          <li><code>/hat</code>: wear the item in your hand. Rich and up.</li>
+          <li><code>/fly</code>: fly at spawn. Elite and Royal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="server-features">
+    <h2>Server features</h2>
+    <p class="small">Custom things we built that you won't find on a normal server, and that aren't commands.</p>
+    <div class="cards">
+      <div class="card"><h3>🪣 Villager bucket</h3><p>Right-click a villager with an empty bucket to pick it up. Right-click a block to put it back down. It keeps all its trades, level, job and name, and the bucket shows its trades when you hover over it. A villager you just placed can't be hurt for 5 seconds.</p></div>
+      <div class="card"><h3>🧟 Zombie villagers every time</h3><p>When a zombie kills a villager, it always turns into a zombie villager. Cure it for cheap trades.</p></div>
+      <div class="card"><h3>📦 Bigger ender chest</h3><p>Your ender chest has 54 slots, double the normal size.</p></div>
+      <div class="card"><h3>🔮 Amethyst tools</h3><p>Special tools bought with shards in <code>/shop</code>: a Silk Touch and a Fortune pickaxe that mine 3x3, a tree axe that cuts down whole trees, a sell axe that sells chests, and an endless water bucket. The tools last 7 days; the water bucket never runs out.</p></div>
+      <div class="card"><h3>🏭 Spawner stacking</h3><p>Stack up to 10,000 spawners of one mob in a single block. Instead of spawning mobs, they make loot and XP into their storage while you're nearby. No lag, just money.</p></div>
+      <div class="card"><h3>🏷️ Prices on hover</h3><p>Items in menus show what they're worth. Turn it on or off with Worth Display in <code>/settings</code>.</p></div>
+      <div class="card"><h3>📊 Scoreboard and balance tags</h3><p>A sidebar shows your money, shards and stats. Players' money and shards also show under their names. Both can be turned off in <code>/settings</code>.</p></div>
+      <div class="card"><h3>🏆 Leaderboards at spawn</h3><p>Live leaderboards stand at spawn and update on their own.</p></div>
+      <div class="card"><h3>💤 AFK area</h3><p>Stand in the AFK area to earn 1 shard every minute. If you stand still on the spawn island for 2 minutes, you're moved there for you.</p></div>
+      <div class="card"><h3>💎 Earning shards</h3><p>You earn shards just by playing, by killing players and from voting. Killing the same player again only pays after 20 minutes.</p></div>
+      <div class="card"><h3>⚔️ Combat tag</h3><p>Every PvP hit puts both players in combat for 20 seconds. No teleporting, no ender chest and no running into spawn. Logging out in combat counts as dying.</p></div>
+      <div class="card"><h3>⚡ Fast crystals</h3><p>Turn on Fast Crystals in <code>/settings</code> and end crystals vanish the moment you hit them, so you can place the next one right away.</p></div>
+      <div class="card"><h3>🗳️ Vote rewards</h3><p>Every vote pays money, shards and a crate key, and counts toward a server-wide vote party. Vote enough and you unlock tags, a particle trail and a chat colour. The top voter each month gets the [Top Voter] tag.</p></div>
+      <div class="card"><h3>✨ Flex skins</h3><p>Rich-player skins like Millionaire and Billionaire come with titles and effects around you, like spinning coins and a crown. Everyone sees them. With our modpack, you also see moving skins and capes.</p></div>
+      <div class="card"><h3>🎵 Spawn music</h3><p>Music plays at spawn, with special playlists for holidays. Turn on Streamer Mode in <code>/settings</code> to turn it off.</p></div>
+      <div class="card"><h3>🐉 The End Event</h3><p>The End is closed at first. When the End Event starts, everyone gets a yes or no poll. Players who join start with empty inventories next to a stronghold and race to kill the dragon. The winner gets the [Legacy] title, $10 million, the dragon head and the egg. After that, the End opens for everyone.</p></div>
+      <div class="card"><h3>🧹 Smart item clear</h3><p>Items on the ground are cleared every 5 minutes, with a countdown first. Items from farms (on hoppers or in water streams leading to them) are left alone.</p></div>
+      <div class="card"><h3>🧱 Lag protection</h3><p>Each chunk can hold up to 512 hoppers and 120 minecarts, so one huge farm can't lag everyone else.</p></div>
+      <div class="card"><h3>🗡️ Respawn kit and more settings</h3><p><code>/settings</code> also has a respawn kit, auto-accept for teleports, hide RTP coordinates, mob spawns near you, death messages, particles and much more.</p></div>
+      <div class="card"><h3>🔄 Daily restart</h3><p>The server restarts once a day to stay smooth. You get chat reminders starting an hour before.</p></div>
+      <div class="card"><h3>🚪 Fast joining</h3><p>If lots of players join at once, there's a short queue. Players with any rank skip it.</p></div>
+      <div class="card"><h3>🤬 Clean chat</h3><p>Swear words in chat, messages, signs and item names are starred out, and slurs are blocked.</p></div>
     </div>
   </section>
 
